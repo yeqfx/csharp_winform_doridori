@@ -33,10 +33,18 @@ namespace chap10_while_do_while
                 if (Array.IndexOf(iArray, iNumber) == -1)
                 {
                     iArray[iCount] = iNumber;
-                    sb.Append(string.Format("{0}, ", iNumber));
+                    // sb.Append(string.Format("{0}, ", iNumber));
                     iCount++;
                 }
             }
+
+            Array.Sort(iArray);
+
+            foreach (var item in iArray)
+            {
+                sb.Append(string.Format("{0}, ", item));
+            }
+
             lblwhileResult.Text = sb.ToString();
             lboxwhileResult.Items.Add(sb.ToString());
         }
